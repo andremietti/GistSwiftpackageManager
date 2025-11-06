@@ -49,7 +49,7 @@ extension HomeListViewModel {
     
     func loadMoreContent() {
         useCase.loadNextPage(page: self.nextPage)
-        actualPage = nextPage + 1
+        actualPage = nextPage
     }
     
 }
