@@ -18,7 +18,7 @@ enum APIEndPoint {
 extension APIEndPoint: EndPoint {
     
     var host: String {
-        return "https://api.github.com"
+        return "api.github.com"
     }
     
     var scheme: String {
