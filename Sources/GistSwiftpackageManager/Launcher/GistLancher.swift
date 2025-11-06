@@ -1,0 +1,20 @@
+//
+//  GistLancher.swift
+//  GistSwiftpackageManager
+//
+//  Created by andre mietti on 06/11/25.
+//
+
+import Foundation
+import UIKit
+
+public final class GistLancher {
+    
+    static public func launch() -> UIViewController {
+        let navigationController = UINavigationController()
+        let coordinator: MainCoordinator
+        let factory = MainFactory()
+        coordinator = MainCoordinator(navigationController: navigationController, factory: factory)
+        return coordinator.start()
+    }
+}
