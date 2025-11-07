@@ -17,13 +17,14 @@ class MainCoordinator: Coordinator {
         self.factory = factory
     }
     
-    func start() {
-        let home = factory.makeHomeListViewController(coordinator: self)
-        navigationController.present(home, animated: true)
+    func start() -> UIViewController {
+        return factory.makeHomeListViewController(coordinator: self)
     }
     
-    func didShowDetail(gist: Gist) {
-        let detailViewController = factory.makeDetailViewController(coordinator: self, gist: gist)
-        navigationController.pushViewController(detailViewController, animated: true)
+    func didShowDetail(gist: Gist, in controller: HomeListViewController) {
+//        let detailViewController = factory.makeDetailViewController(coordinator: self, gist: gist)
+//        navigationController.pushViewController(detailViewController, animated: true)
+        
+        controller.show(factory.makeDetailViewController(coordinator: self, gist: gist), sender: controller)
     }
 }
