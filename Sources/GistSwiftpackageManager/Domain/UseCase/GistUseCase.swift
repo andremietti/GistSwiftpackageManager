@@ -29,6 +29,7 @@ class GistUseCase: GistUseCaseProtocol {
                     debugPrint("Finished")
                 case .failure(let error):
                     self?.gistError = error.debugDescription
+                    debugPrint("Finish with error: \(error.debugDescription)")
                 }
             } receiveValue: { [weak self] list in
                 self?.gistList = list
