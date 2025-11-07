@@ -24,7 +24,7 @@ class HomeListViewController: UIViewController {
     private var isLoading = false
 
 
-    // MARK: - ViewConreoller LifeCycle
+    // MARK: - ViewController LifeCycle
     init(viewModel: HomeListViewModel = HomeListViewModel(), coordinator: MainCoordinator) {
         super.init(nibName: nil, bundle: nil)
         self.viewModel = viewModel

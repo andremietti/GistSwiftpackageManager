@@ -7,7 +7,7 @@
 
 import UIKit
 
-class MainCoordinator: Coordinator {
+public class MainCoordinator: Coordinator {
     var childCoordinators = [Coordinator]()
     var navigationController: UINavigationController
     var factory: MainFactory
@@ -22,9 +22,6 @@ class MainCoordinator: Coordinator {
     }
     
     func didShowDetail(gist: Gist, in controller: HomeListViewController) {
-//        let detailViewController = factory.makeDetailViewController(coordinator: self, gist: gist)
-//        navigationController.pushViewController(detailViewController, animated: true)
-        
-        controller.show(factory.makeDetailViewController(coordinator: self, gist: gist), sender: controller)
+        controller.navigationController?.pushViewController(factory.makeDetailViewController(coordinator: self, gist: gist), animated: true)
     }
 }
