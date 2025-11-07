@@ -21,7 +21,8 @@ class MainCoordinator: Coordinator {
         factory.makeHomeListViewController(coordinator: self)
     }
     
-    func didShowDetail(gist: Gist) -> UIViewController {
-        return factory.makeDetailViewController(coordinator: self, gist: gist)
+    func didShowDetail(gist: Gist) {
+        let detailViewController = factory.makeDetailViewController(coordinator: self, gist: gist)
+        navigationController.pushViewController(detailViewController, animated: true)
     }
 }
