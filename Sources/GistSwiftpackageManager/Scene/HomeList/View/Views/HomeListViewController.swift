@@ -25,10 +25,9 @@ class HomeListViewController: UIViewController {
 
 
     // MARK: - ViewController LifeCycle
-    init(viewModel: HomeListViewModel = HomeListViewModel(), coordinator: MainCoordinator) {
+    init(viewModel: HomeListViewModel = HomeListViewModel()) {
         super.init(nibName: nil, bundle: nil)
         self.viewModel = viewModel
-        self.coordinator = coordinator
     }
     
     init() {

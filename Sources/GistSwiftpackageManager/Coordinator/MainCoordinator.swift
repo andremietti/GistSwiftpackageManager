@@ -18,7 +18,9 @@ class MainCoordinator: Coordinator {
     }
     
     func start() -> UINavigationController {
-        navigationController.setViewControllers([factory.makeHomeListViewController(coordinator: self)], animated: true)
+        let homeListViewController = factory.makeHomeListViewController()
+        homeListViewController.coordinator = self
+        navigationController.setViewControllers([factory.makeHomeListViewController()], animated: true)
         return navigationController
     }
     
