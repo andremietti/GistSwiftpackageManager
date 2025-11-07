@@ -7,7 +7,7 @@
 
 import UIKit
 
-public class MainCoordinator: Coordinator {
+class MainCoordinator: Coordinator {
     var childCoordinators = [Coordinator]()
     var navigationController: UINavigationController
     var factory: MainFactory

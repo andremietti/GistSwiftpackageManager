@@ -6,11 +6,13 @@
 //
 
 import Foundation
+import UIKit
 
 final class MainFactory {
     
-    func makeHomeListViewController(coordinator: MainCoordinator) -> HomeListViewController {
+    func makeHomeListViewController(coordinator: MainCoordinator, navigationController: UINavigationController) -> HomeListViewController {
         let homeListViewController = HomeListViewController(viewModel: HomeListViewModel(), coordinator: coordinator)
+        navigationController.present(homeListViewController, animated: true)
         return homeListViewController
     }
     
