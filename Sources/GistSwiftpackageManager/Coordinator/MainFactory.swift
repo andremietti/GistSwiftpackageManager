@@ -10,8 +10,7 @@ import Foundation
 final class MainFactory {
     
     func makeHomeListViewController(coordinator: MainCoordinator) -> HomeListViewController {
-        let homeListViewController = HomeListViewController(viewModel: HomeListViewModel())
-        homeListViewController.coordinator = coordinator
+        let homeListViewController = HomeListViewController(viewModel: HomeListViewModel(), coordinator: coordinator)
         return homeListViewController
     }
     
