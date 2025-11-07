@@ -48,7 +48,7 @@ class HomeListViewController: UIViewController {
         rootView.delegate = self
         self.view.backgroundColor = UIColor(red: 40.0/255.0, green: 43.0/255.0, blue: 50.0/255.0, alpha: 1.0)
         navigationItem.backButtonTitle = ""
-        self.navigationItem.title = "The Rick and Morty"
+        self.navigationItem.title = "Gist Github"
 
         setupObservables()
         loadData()
@@ -97,5 +97,7 @@ extension HomeListViewController: HomeViewDelegate {
     
     func didTapOnGist(gist: Gist) {
         coordinator?.didShowDetail(gist: gist)
+        let detail = DetailViewController(viewModel: DetailViewModel(gist: gist))
+        self.navigationController?.pushViewController(detail, animated: true)
     }
 }

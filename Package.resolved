@@ -1,5 +1,5 @@
 {
-  "originHash" : "0bcbca97f1a8e4220c1a08d4c836f55982d24b761b81f8220c164b3b88a2749e",
+  "originHash" : "25adead8588a2db06bdaddafa6f31851ec8766a9d18d875dd8ff3dfae93b0a9e",
   "pins" : [
     {
       "identity" : "kingfisher",
@@ -16,7 +16,7 @@
       "location" : "https://github.com/andremietti/Networking.git",
       "state" : {
         "branch" : "main",
-        "revision" : "38ce423e23167f56abe80f480d9c21bf4d272435"
+        "revision" : "76867190fea151cb71c498347da316c48ab4fd6c"
       }
     }
   ],
