@@ -15,7 +15,7 @@ class HomeListViewController: UIViewController {
         
     // MARK: - Properties
     private let rootView = HomeListView()
-    weak var coordinator: MainCoordinator?
+    weak var coordinator: HomeCoordinatorDelegate?
     private var viewModel: HomeListViewModel!
     
     @Published private var gistList: GistList?
@@ -25,9 +25,10 @@ class HomeListViewController: UIViewController {
 
 
     // MARK: - ViewController LifeCycle
-    init(viewModel: HomeListViewModel = HomeListViewModel()) {
+    init(viewModel: HomeListViewModel = HomeListViewModel(), coordinator: HomeCoordinatorDelegate) {
         super.init(nibName: nil, bundle: nil)
         self.viewModel = viewModel
+        self.coordinator = coordinator
     }
     
     init() {
@@ -96,8 +97,15 @@ extension HomeListViewController: HomeViewDelegate {
     }
     
     func didTapOnGist(gist: Gist) {
-        coordinator?.didShowDetail(gist: gist)
-        let detail = DetailViewController(viewModel: DetailViewModel(gist: gist))
-        self.navigationController?.pushViewController(detail, animated: true)
+//        coordinator?.didShowDetail(gist: gist)
+//        let detail = DetailViewController(viewModel: DetailViewModel(gist: gist))
+//        self.navigationController?.pushViewController(detail, animated: true)
+    }
+}
+
+
+extension HomeListViewController: HomeCoordinatorDelegate {
+    func didShowGistDetail(gist: Gist) {
+        coordinator?.didShowGistDetail(gist: gist)
     }
 }

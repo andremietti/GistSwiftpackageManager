@@ -18,13 +18,19 @@ class MainCoordinator: Coordinator {
     }
     
     func start() -> UINavigationController {
-        let homeListViewController = factory.makeHomeListViewController()
-        homeListViewController.coordinator = self
-        navigationController.setViewControllers([factory.makeHomeListViewController()], animated: true)
+        let homeListViewController = factory.makeHomeListViewController(coordinator: self)
+        navigationController.setViewControllers([homeListViewController], animated: true)
         return navigationController
     }
     
     func didShowDetail(gist: Gist) {
+        navigationController.pushViewController(factory.makeDetailViewController(coordinator: self, gist: gist), animated: true)
+    }
+}
+
+extension MainCoordinator: HomeCoordinatorDelegate {
+    
+    func didShowGistDetail(gist: Gist) {
         navigationController.pushViewController(factory.makeDetailViewController(coordinator: self, gist: gist), animated: true)
     }
 }

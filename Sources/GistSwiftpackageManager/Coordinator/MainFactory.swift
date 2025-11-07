@@ -10,8 +10,8 @@ import UIKit
 
 final class MainFactory {
     
-    func makeHomeListViewController() -> HomeListViewController {
-        return HomeListViewController(viewModel: HomeListViewModel())
+    func makeHomeListViewController(coordinator: HomeCoordinatorDelegate) -> HomeListViewController {
+        return HomeListViewController(viewModel: HomeListViewModel(), coordinator: coordinator as HomeCoordinatorDelegate)
     }
     
     func makeDetailViewController(coordinator: MainCoordinator, gist: Gist) -> DetailViewController {
