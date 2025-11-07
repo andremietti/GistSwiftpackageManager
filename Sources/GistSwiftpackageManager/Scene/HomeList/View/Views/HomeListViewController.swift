@@ -98,6 +98,7 @@ extension HomeListViewController: HomeViewDelegate {
     
     func didTapOnGist(gist: Gist) {
         coordinator?.didShowGistDetail(gist: gist)
+
 //        coordinator?.didShowDetail(gist: gist)
 //        let detail = DetailViewController(viewModel: DetailViewModel(gist: gist))
 //        self.navigationController?.pushViewController(detail, animated: true)

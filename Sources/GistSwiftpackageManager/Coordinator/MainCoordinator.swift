@@ -7,7 +7,7 @@
 
 import UIKit
 
-class MainCoordinator: Coordinator {
+public class MainCoordinator: Coordinator {
     var childCoordinators = [Coordinator]()
     var navigationController: UINavigationController
     var factory: MainFactory
@@ -17,7 +17,7 @@ class MainCoordinator: Coordinator {
         self.factory = factory
     }
     
-    func start() -> UINavigationController {
+    public func start() -> UINavigationController {
         let homeListViewController = factory.makeHomeListViewController(coordinator: self)
         navigationController.setViewControllers([homeListViewController], animated: true)
         return navigationController
