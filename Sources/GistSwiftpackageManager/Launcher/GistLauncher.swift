@@ -10,11 +10,11 @@ import UIKit
 
 public final class GistLauncher {
     
-    static public func launch(navigationController: UINavigationController) -> UIViewController {
-        let navigationController = navigationController
+    static public func launch() {
+        let navigationController = UINavigationController()
         let coordinator: MainCoordinator
         let factory = MainFactory()
         coordinator = MainCoordinator(navigationController: navigationController, factory: factory)
-        return coordinator.start()
+        coordinator.start()
     }
 }

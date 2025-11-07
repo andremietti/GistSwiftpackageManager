@@ -17,8 +17,9 @@ class MainCoordinator: Coordinator {
         self.factory = factory
     }
     
-    func start() -> UIViewController {
-        factory.makeHomeListViewController(coordinator: self)
+    func start() {
+        let home = factory.makeHomeListViewController(coordinator: self)
+        navigationController.present(home, animated: true)
     }
     
     func didShowDetail(gist: Gist) {
