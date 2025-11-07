@@ -97,6 +97,6 @@ extension HomeListViewController: HomeViewDelegate {
     }
     
     func didTapOnGist(gist: Gist) {
-        coordinator?.didShowDetail(gist: gist, in: self)
+        coordinator?.didShowDetail(gist: gist)
     }
 }
